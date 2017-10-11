@@ -28,7 +28,7 @@ Very quick install
 ==================
 
 
-    >  docker run --disable-content-trust=false twistlock/hazauth -h
+    >  docker run --disable-content-trust=false twistlock/hazauth:alpha-0.1 -h
     
 Dont want to run as a container? no problem!:
      
@@ -42,23 +42,23 @@ Currently HazAuth support these actions:
 
 ###  Scanning local registries:
 
-    > docker run -v /var/run/docker.sock:/var/run/docker.sock twistlock/hazauth registry check -l
+    > docker run --disable-content-trust=false -v /var/run/docker.sock:/var/run/docker.sock:ro twistlock/hazauth registry check -l
     
    ###### we have to mount the docker socket in order for hazauth to be able to scan local containers!
 ###  Scanning remote registry:
 
-    > docker run twistlock/hazauth registry check -i IP -p PORT
+    > docker run --disable-content-trust=false twistlock/hazauth:alpha-0.1 registry check -i IP -p PORT
 ###### by default (without -p flag) hazuath will scan this default ports: [80,443,5000,8000,8080,9200]
 
 
 ### Scanning a remote redis instance:
 
-    > docker run twistlock/hazauth redi5 check -i IP -p PORT
+    > docker run --disable-content-trust=false twistlock/hazauth:alpha-0.1 redi5 check -i IP -p PORT
 
 
 ###  Scanning local redis instances:
 
-     >docker run twistlock/hazauth redi5 check -l
+     >docker run --disable-content-trust=false twistlock/hazauth:alpha-0.1 redi5 check -l
     
 ###  Scanning MongoDB:
 
