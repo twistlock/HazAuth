@@ -28,7 +28,7 @@ Very quick install
 ==================
 
 
-    >  docker run --disable-content-trust=false twistlock/hazauth:alpha-0.1 -h
+    >  docker run --disable-content-trust=false twistlock/hazauth -h
     
 Dont want to run as a container? no problem!:
      
@@ -53,12 +53,12 @@ Currently HazAuth support these actions:
 
 ### Scanning a remote redis instance:
 
-    > docker run --disable-content-trust=false twistlock/hazauth:alpha-0.1 redi5 check -i IP -p PORT
+    > docker run --disable-content-trust=false twistlock/hazauth redi5 check -i IP -p PORT
 
 
 ###  Scanning local redis instances:
 
-     >docker run --disable-content-trust=false twistlock/hazauth:alpha-0.1 redi5 check -l
+     >docker run --disable-content-trust=false twistlock/hazauth redi5 check -l
     
 ###  Scanning MongoDB:
 
