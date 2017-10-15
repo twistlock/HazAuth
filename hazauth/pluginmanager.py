@@ -46,7 +46,7 @@ class PluginManager:
             # Plugin not found, print generic help
             self.help_all()
 
-    def help(self, plugin, INDEX):
+    def help(self, plugin, index):
         """ Prints the help for the given plugin """
 
         commands = plugin._commands()
