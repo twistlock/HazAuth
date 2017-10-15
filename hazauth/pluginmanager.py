@@ -2,7 +2,7 @@
 
 from plugins import __all__
 
-
+INDEX = 1
 class PluginManager:
     """ Manages available plugins """
 
@@ -33,20 +33,20 @@ class PluginManager:
         try:
             plugin = self.__load_plugin(plugin_name)
             if not command_name:
-                self.help(plugin)
+                self.help(plugin,1INDEX)
             else:
                 try:
                     command = plugin._commands()[command_name]
                     return command(args)
                 except KeyError:
                     # Command not found in plugin. Print only plugin help
-                    self.help(plugin)
+                    self.help(plugin,INDEX)
 
         except KeyError:
             # Plugin not found, print generic help
             self.help_all()
 
-    def help(self, plugin, index):
+    def help(self, plugin, INDEX):
         """ Prints the help for the given plugin """
 
         commands = plugin._commands()
