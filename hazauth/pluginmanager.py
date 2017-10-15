@@ -33,7 +33,7 @@ class PluginManager:
         try:
             plugin = self.__load_plugin(plugin_name)
             if not command_name:
-                self.help(plugin,1INDEX)
+                self.help(plugin,INDEX)
             else:
                 try:
                     command = plugin._commands()[command_name]
